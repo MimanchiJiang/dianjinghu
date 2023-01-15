@@ -40,7 +40,6 @@
         .TopBarListBottom {
             height: 50%;
             color: rgb(149, 149, 149);
-            line-height: px(50);
             text-align: left;
             display: flex;
             font-size: px(15);
@@ -51,9 +50,30 @@
                 margin-left: px(20);
                 font-size: px(17);
 
-                &:hover {
-                    transition: all .3s cubic-bezier(.165, .84, .44, 1);
+
+                a::after {
+                    content: "";
+                    z-index: -1;
+                    position: absolute;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+
+
+                }
+
+                &:hover::before {
+                    transform-origin: center top;
+                    transform: scaleY(1);
                     color: white;
+                    transform-origin: center bottom;
+                    transform: scaleY(0);
+                    transition: transform 0.4s ease-in-out;
+                }
+
+                &:hover {
+                    cursor: pointer;
                 }
 
                 &:focus {
@@ -72,7 +92,13 @@
                 }
             }
 
+            .youxizixun {
+                line-height: px(50);
+
+            }
+
             .zhibodaohang {
+                line-height: px(50);
 
                 .Icon {
                     background-position: 49%;
@@ -80,6 +106,7 @@
             }
 
             .app {
+                line-height: px(50);
 
                 .Icon {
                     background-position: 62%;
@@ -99,13 +126,109 @@
                 position: relative;
                 transition: all 250ms;
                 transform-origin: px(6) px(3);
+                line-height: px(50);
 
                 &:hover .mapIcon {
                     transform: rotate(180deg);
                 }
 
+                &:hover .mapList {
+                    display: inline-flex;
+
+                }
+
+                .mapList {
+                    width: px(270);
+                    height: px(230);
+                    position: absolute;
+                    top: px(45);
+                    left: px(-100);
+                    background-color: white;
+                    display: none;
+                    display: flex;
+                    flex-direction: row;
+                    line-height: px(25);
+                    text-align: center;
+                    border-radius: 2px;
+                    display: none;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        width: 0;
+                        height: 0;
+                        border: px(10) solid;
+                        border-radius: px(10);
+                        border-color: transparent transparent rgb(233, 233, 233) transparent;
+                        top: px(-18);
+                        left: px(125);
+                    }
+
+                    a {
+                        font-size: px(12);
+                        text-align: center;
+                        color: rgb(97, 97, 97);
+                        margin-left: 0;
+                        padding-right: 0;
+                    }
+
+                    .first {
+                        padding-top: px(5);
+                    }
+
+                    .main {
+                        width: px(90);
+                        height: 100%;
+                        border-right: 1px solid rgb(237, 237, 237);
+
+                        .mainTitle {
+                            font-weight: bolder;
+                            color: rgb(65, 65, 66);
+                            background-color: rgb(233, 233, 233);
+                            line-height: px(40);
+                            border-right: 1px solid rgb(203, 203, 203);
+                            border-top-left-radius: 2px;
+
+                        }
+                    }
+
+                    .exportsGames {
+                        width: px(90);
+                        height: 100%;
+                        border-right: 1px solid rgb(237, 237, 237);
+
+
+                        .exportsGamesTitle {
+                            font-weight: bolder;
+                            color: rgb(65, 65, 66);
+                            background-color: rgb(233, 233, 233);
+                            line-height: px(40);
+                            border-right: 1px solid rgb(203, 203, 203);
+
+
+                        }
+                    }
+
+                    .mobileGames {
+                        width: px(90);
+                        height: 100%;
+
+                        .mobileGamesTitle {
+                            font-weight: bolder;
+                            color: rgb(65, 65, 66);
+                            background-color: rgb(233, 233, 233);
+                            line-height: px(40);
+                            border-top-right-radius: 2px;
+
+
+                        }
+                    }
+                }
+
+
+
+
                 .mapIcon {
-                    border: 1px solid red;
                     width: px(10);
                     height: px(10);
                     position: absolute;
