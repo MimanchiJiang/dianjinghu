@@ -1,17 +1,48 @@
 <!DOCTYPE html>
 <html lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>电竞虎模仿</title>
+  <script>
+    const clientWidth = document.documentElement.clientWidth
+    const clientHeight = document.documentElement.clientHeight
+    window.pageWidth = clientWidth / clientHeight > 16 / 9 ? clientHeight * (16 / 9) : clientWidth
+    const pageHeight = pageWidth / (16 / 9)
+    console.log(clientWidth / clientHeight)
+    const string = `<style>html{
+      font-size:${pageWidth / 100}px
+    } </style>`
+    document.write(string)
+  </script>
+  <script src="//at.alicdn.com/t/c/font_3863664_o4dbgptrnnm.js"></script>
+</head>
+
+<body>
+
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    app.style.width = pageWidth + 'px'
+    app.style.height = pageHeight + 'px'
+    app.style.marginTop = (clientHeight - pageHeight) / 2 + 'px'
+
+  </script>
+</body>
+<style lang="scss">
+  @import url(../src/style/style.scss);
+
+  body {
+    background-color: rgb(23, 23, 23);
+  }
+
+  #app {
+    margin: 0 auto;
+    background-color: rgb(247, 247, 247);
+  }
+</style>
+
 </html>
