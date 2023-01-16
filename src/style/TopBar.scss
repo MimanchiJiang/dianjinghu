@@ -7,6 +7,9 @@
     background-color: rgb(23, 23, 23);
     display: flex;
     justify-content: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
 
     .TopBarList {
         padding-left: px(100);
@@ -309,7 +312,7 @@
     .logo {
         background: url(../assets/logo.png) no-repeat;
         height: 100%;
-        background-position: px(250) px(20);
+        background-position: px(250) px(15);
         width: px(550);
         position: relative;
     }
