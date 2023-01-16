@@ -74,6 +74,7 @@
 
                 &:hover {
                     cursor: pointer;
+                    color: white;
                 }
 
                 &:focus {
@@ -317,10 +318,11 @@
         content: ' ';
         position: absolute;
         top: px(-100);
-        right: px(-100);
-        border-width: px(200) px(100);
-        border-style: solid;
-        border-color: rgb(23, 23, 23) transparent transparent transparent;
+        right: px(-50);
+        width: px(10);
+        height: 100%;
+        border-right: px(53) solid transparent;
+        border-bottom: px(100) solid rgb(23, 23, 23);
     }
 
 }

@@ -1,6 +1,7 @@
 <template>
     <div class="TopBar">
         <div class="logo"></div>
+        <div class="skew"></div>
         <div class="TopBarList">
             <div class="TopBarListTop">
                 <a
@@ -74,6 +75,6 @@ export default {
 
 </script>
 
-<style >
+<style scoped lang="scss" >
 @import url(../style/TopBar.scss);
 </style>
