@@ -14,7 +14,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @function px($n) {
   @return $n / 1920 * 100rem;
 }
@@ -30,7 +30,6 @@ export default {
 }
 
 .content {
-  border: 1px solid red;
   display: flex;
   width: px(1000);
   margin: 0 auto;

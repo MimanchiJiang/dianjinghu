@@ -1,5 +1,5 @@
 <template>
-    <div class="main">
+    <div class="mainContent">
         <div class="layout">
             <router-link to="/doc/about">
                 <div class="layoutIcon layoutIcon-1"></div>
@@ -34,13 +34,14 @@ export default {
 
 </script>
 <style lang="scss" scoped>
-@import url(../style/Doc.scss);
+@import '../style/style.scss';
 
 @function px($n) {
     @return $n / 1920 * 100rem;
 }
 
-.main {
+.mainContent {
+    border: 2px solid rgb(225, 225, 225);
     background-color: rgb(247, 247, 247);
     margin: 0 auto;
     margin-top: px(170);
@@ -67,6 +68,7 @@ export default {
             height: px(54);
             line-height: px(60);
             float: left;
+            border: 1px solid red;
         }
 
         .layoutIcon-1 {
@@ -101,8 +103,8 @@ export default {
     }
 
     main {
-        border: 1px solid red;
         flex: 1;
+        background-color: white;
     }
 
 }
