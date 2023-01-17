@@ -17,7 +17,6 @@
         display: flex;
         flex-direction: column;
         background-color: rgb(37, 37, 37);
-        font-size: px(13);
 
         .TopBarListTop {
             height: 50%;
@@ -28,7 +27,7 @@
 
             a {
                 padding: px(20);
-                font-size: px(14);
+                font-size: px(16);
 
                 &:hover {
                     color: rgb(241, 142, 0);
@@ -125,7 +124,7 @@
             }
 
             .map {
-                margin-left: px(200);
+                margin-left: px(250);
                 color: white;
                 position: relative;
                 transition: all 250ms;
@@ -288,18 +287,22 @@
             }
 
             .register {
-                background-color: rgb(40, 183, 156);
-                border-radius: 4px;
+                background-color: rgb(59, 206, 178);
+                border-radius: 2px;
                 border: none;
-                height: px(30);
-                width: px(60);
-                line-height: px(30);
-                margin-top: px(11);
-                margin-left: px(20);
+                height: px(28);
+                width: px(66);
+                line-height: px(28);
+                margin-top: px(10);
+                margin-left: px(5);
                 color: white;
                 text-align: center;
                 font-size: px(15);
                 text-align: center;
+            }
+
+            .register:hover {
+                background-color: rgb(37, 179, 152);
             }
 
 
@@ -321,11 +324,11 @@
         content: ' ';
         position: absolute;
         top: px(-100);
-        right: px(-50);
+        right: px(-61);
         width: px(10);
         height: 100%;
-        border-right: px(53) solid transparent;
-        border-bottom: px(100) solid rgb(23, 23, 23);
+        border-left: px(53) solid rgb(23, 23, 23);
+        border-bottom: px(100) solid transparent;
     }
 
 }
