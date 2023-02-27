@@ -1,28 +1,24 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import About from '../views/About.vue'
-import Author from '../views/Author'
-import Work from '../views/Work.vue'
-import Contact from '../views/Contact'
-import WebMap from '../views/WebMap'
+import History from '../views/History.vue'
 import Doc from '../views/Doc.vue'
+import Login from '../views/Login.vue'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Doc
+    component: Login
   },
   {
     path: '/doc', component: Doc, children: [
       { path: '', redirect: '/doc/about' },
-      { path: 'work', component: Work },
-      { path: 'webmap', component: WebMap },
-      { path: 'contact', component: Contact },
-      { path: 'author', component: Author },
+      { path: 'history', component: History },
       { path: 'about', component: About }
 
     ]
-  }
+  },
+  { path: '/login', component: Login }
 ]
 
 const router = createRouter({

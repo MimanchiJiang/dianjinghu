@@ -1,111 +1,98 @@
 <template>
-    <div class="mainContent">
-        <div class="layout">
-            <router-link to="/doc/about">
-                <div class="layoutIcon layoutIcon-1"></div>
-                <div class="layoutTitle">关于电竞虎</div>
-            </router-link>
-            <router-link to="/doc/work">
-                <div class="layoutIcon layoutIcon-2"></div>
-                <div class="layoutTitle">来电竞虎工作</div>
-            </router-link>
-            <router-link to="/doc/author">
-                <span class="layoutIcon layoutIcon-3"></span>
-                <div class="layoutTitle">成为作者</div>
-            </router-link>
-            <router-link to="/doc/contact">
-                <span class="layoutIcon layoutIcon-4"></span>
-                <div class="layoutTitle">联系我们</div>
-            </router-link>
-            <router-link to="/doc/webmap">
-                <span class="layoutIcon layoutIcon-5"></span>
-                <div class="layoutTitle">网站地图</div>
-            </router-link>
+    <div class="content">
+        <top-bar></top-bar>
+        <div class="mainContent">
+            <div class="layout">
+                <router-link class="control" to="/doc/about">
+                    <div class="layoutIcon ">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-kongzhi"></use>
+                        </svg>
+                    </div>
+                    <div class="layoutTitle">设备页面</div>
+                </router-link>
+                <router-link class="history" to="/doc/history">
+                    <div class="layoutIcon">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-lishijilu"></use>
+                        </svg>
+                    </div>
+                    <div class="layoutTitle">历史记录</div>
+                </router-link>
+
+            </div>
+            <main><router-view></router-view></main>
         </div>
-
-        <main><router-view></router-view></main>
     </div>
-
 </template>
 <script>
+import TopBar from '@/components/TopBar.vue'
 export default {
-
+    components: { TopBar }
 }
 
 </script>
 <style lang="scss" scoped>
-@import '../style/style.scss';
+$leftNav: rgb(236, 201, 163, 0.5);
+$rightBg: rgb(229, 227, 229);
+$active: rgb(34, 70, 105);
+$fontColor: rgb(62, 115, 158);
 
-@function px($n) {
-    @return $n / 1920 * 100rem;
-}
-
-.mainContent {
-    border: 2px solid rgb(225, 225, 225);
-    background-color: rgb(247, 247, 247);
-    margin: 0 auto;
-    margin-top: px(170);
-    min-height: 100vh;
-    width: px(1000);
+.content {
+    height: 100vh;
     display: flex;
+    flex-direction: column;
 
-    .layout {
-        width: px(215);
-        flex-shrink: 0;
-        background-color: rgb(239, 239, 239);
+    .mainContent {
+        background-color: $leftNav;
         display: flex;
-        flex-direction: column;
-        font-size: px(17);
-        text-align: left;
-
-        .layoutTitle {
-            height: px(60);
-            line-height: px(60);
-        }
-
-        .layoutIcon {
-            width: px(60);
-            height: px(54);
-            line-height: px(60);
-            float: left;
-            border: 1px solid red;
-        }
-
-        .layoutIcon-1 {
-            background: url(../assets/home.png) no-repeat center;
-
-        }
-
-        .layoutIcon-2 {
-            background: url(../assets/work.png) no-repeat center;
-
-        }
-
-        .layoutIcon-3 {
-            background: url(../assets/author.png) no-repeat center;
-
-        }
-
-        .layoutIcon-4 {
-            background: url(../assets/contact.png) no-repeat center;
-
-        }
-
-        .layoutIcon-5 {
-            background: url(../assets/map.png) no-repeat center;
-
-        }
-
-        .router-link-active {
-            background-color: white;
-            border-left: px(4) solid rgb(241, 142, 0);
-        }
-    }
-
-    main {
+        width: 100vw;
         flex: 1;
-        background-color: white;
-    }
 
+        .layout {
+            width: 200px;
+            background-color: rgba(184, 175, 164, 0.5);
+            display: flex;
+            flex-direction: column;
+            font-size: 17px;
+            text-align: left;
+
+            .control,
+            .history {
+                display: flex;
+                align-items: center;
+                border-right: 7px solid transparent;
+            }
+
+            .layoutTitle {
+                height: 60px;
+                line-height: 60px;
+                color: $fontColor;
+
+            }
+
+            .icon {
+                width: 25px;
+                height: 25px;
+                margin: 0 10px 0 20px;
+                color: $fontColor;
+
+            }
+
+
+            .router-link-active {
+                border-right: 7px solid $active;
+                background-color: rgba(184, 175, 164, 0.7);
+
+            }
+        }
+
+        main {
+            flex: 1;
+            background-color: $rightBg;
+
+        }
+
+    }
 }
 </style>
